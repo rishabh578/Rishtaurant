@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+```
+<!-- CHANGE THIS: Website title shown in the browser tab -->
+<title>RISHTAURANT — Modern Dining Experience</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CHANGE THIS: Description for Google -->
+<meta name="description" content="RISHTAURANT is a modern restaurant offering an unforgettable dining experience.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+    /* =========================================================
+       RISHTAURANT RESTAURANT WEBSITE
+       
+       EVERYTHING IS INSIDE THIS FILE.
+       
+       Search for:
+       "CHANGE THIS"
+       
+       to find the areas you should customize.
+    ========================================================= */
+
+
+    /* =========================
+       GLOBAL VARIABLES
+    ========================= */
+
+    :root {
+        --bg: #0c0c0b;
+        --bg-soft: #141412;
+        --card: #191917;
+        --text: #f5f1e8;
+        --muted: #aaa69d;
+        --gold: #c7a86b;
+        --gold-light: #e0c58d;
+        --border: rgba(255,255,255,0.10);
+        --max-width: 1200px;
+    }
+
+
+    /* =========================
+       RESET
+    ========================= */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    button {
+        font: inherit;
+    }
+
+
+    /* =========================
+       UTILITY
+    ========================= */
+
+    .container {
+        width: min(90%, var(--max-width));
+        margin: auto;
+    }
+
+    .section {
+        padding: 110px 0;
+    }
+
+    .section-label {
+        color: var(--gold);
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        font-weight: 600;
+    }
+
+    .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.4rem, 5vw, 4.5rem);
+        line-height: 1.05;
+        font-weight: 500;
+    }
+
+    .section-description {
+        color: var(--muted);
+        max-width: 560px;
+        margin-top: 20px;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 22px 0;
+        transition: 0.3s ease;
+    }
+
+    .navbar.scrolled {
+        background: rgba(12,12,11,0.92);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+        padding: 15px 0;
+    }
+
+    .nav-inner {
+        width: min(92%, 1300px);
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.7rem;
+        letter-spacing: 0.12em;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+        font-size: 0.9rem;
+    }
+
+    .nav-links a {
+        color: #ddd;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--gold);
+    }
+
+    .nav-button {
+        border: 1px solid var(--gold);
+        padding: 11px 19px;
+        color: var(--gold);
+        transition: 0.3s;
+    }
+
+    .nav-button:hover {
+        background: var(--gold);
+        color: #111;
+    }
+
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.7rem;
+        cursor: pointer;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        /*
+            CHANGE THIS:
+
+            Replace this URL with your own restaurant
+            hero image if you want.
+
+            Recommended image:
+            - Elegant restaurant interior
+            - Fine dining table
+            - Chef plating food
+            - Dark / warm atmosphere
+        */
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(5,5,4,0.90) 0%,
+                rgba(5,5,4,0.60) 45%,
+                rgba(5,5,4,0.25) 100%
+            ),
+            url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2000&q=85");
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-content {
+        width: min(90%, 1200px);
+        margin: auto;
+        padding-top: 80px;
+    }
+
+    .hero-small {
+        color: var(--gold-light);
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-weight: 500;
+        font-size: clamp(4rem, 9vw, 8.5rem);
+        line-height: 0.9;
+        max-width: 900px;
+    }
+
+    .hero h1 span {
+        color: var(--gold);
+        font-style: italic;
+    }
+
+    .hero-text {
+        max-width: 500px;
+        margin-top: 30px;
+        color: #d0ccc4;
+        font-size: 1.05rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 35px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 25px;
+        border: 1px solid var(--gold);
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background: var(--gold);
+        color: #111;
+    }
+
+    .btn-primary:hover {
+        background: var(--gold-light);
+        transform: translateY(-3px);
+    }
+
+    .btn-outline {
+        color: white;
+    }
+
+    .btn-outline:hover {
+        background: white;
+        color: #111;
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--muted);
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+    }
+
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+        background: var(--bg-soft);
+    }
+
+    .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .intro-image {
+        position: relative;
+    }
+
+    .intro-image img {
+        height: 650px;
+        object-fit: cover;
+    }
+
+    .intro-image::after {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        border: 1px solid var(--gold);
+        right: -25px;
+        bottom: -25px;
+        z-index: 0;
+    }
+
+    .intro-image img {
+        position: relative;
+        z-index: 1;
+    }
+
+    .intro-content {
+        padding-left: 20px;
+    }
+
+    .intro-content p {
+        color: var(--muted);
+        margin-top: 25px;
+        max-width: 520px;
+    }
+
+    .signature {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-style: italic;
+        margin-top: 35px;
+        color: var(--gold-light);
+    }
+
+
+    /* =========================
+       MENU
+    ========================= */
+
+    .menu-section {
+        background: var(--bg);
+    }
+
+    .menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 60px;
+        gap: 30px;
+    }
+
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 70px;
+    }
+
+    .menu-item {
+        padding: 25px 0;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+    }
+
+    .menu-item h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.35rem;
+        font-weight: 500;
+    }
+
+    .menu-item p {
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-top: 6px;
+    }
+
+    .price {
+        color: var(--gold);
+        white-space: nowrap;
+    }
+
+
+    /* =========================
+       FEATURE IMAGE
+    ========================= */
+
+    .feature-image {
+        min-height: 70vh;
+
+        /*
+            CHANGE THIS:
+
+            Recommended image:
+            A beautiful close-up food photograph.
+
+            Example subjects:
+            - Pasta
+            - Steak
+            - Dessert
+            - Fine dining plate
+        */
+
+        background:
+            linear-gradient(
+                rgba(0,0,0,0.35),
+                rgba(0,0,0,0.45)
+            ),
+            url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=2000&q=85");
+
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .feature-content {
+        max-width: 750px;
+        padding: 30px;
+    }
+
+    .feature-content h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3rem, 7vw, 6rem);
+        line-height: 1;
+        font-weight: 500;
+    }
+
+    .feature-content p {
+        margin-top: 25px;
+        color: #ddd;
+    }
+
+
+    /* =========================
+       EXPERIENCE CARDS
+    ========================= */
+
+    .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 60px;
+    }
+
+    .experience-card {
+        background: var(--card);
+        padding: 40px;
+        border: 1px solid var(--border);
+        transition: 0.4s ease;
+    }
+
+    .experience-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(199,168,107,0.5);
+    }
+
+    .experience-number {
+        color: var(--gold);
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+    }
+
+    .experience-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.7rem;
+        margin: 35px 0 15px;
+    }
+
+    .experience-card p {
+        color: var(--muted);
+        font-size: 0.9rem;
+    }
+
+
+    /* =========================
+       CHEF
+    ========================= */
+
+    .chef {
+        background: var(--bg-soft);
+    }
+
+    .chef-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 90px;
+        align-items: center;
+    }
+
+    .chef-image img {
+        height: 620px;
+        object-fit: cover;
+    }
+
+    .chef-content p {
+        color: var(--muted);
+        margin-top: 25px;
+    }
+
+    .chef-name {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin-top: 30px;
+    }
+
+
+    /* =========================
+       TESTIMONIAL
+    ========================= */
+
+    .testimonial {
+        text-align: center;
+    }
+
+    .quote {
+        max-width: 850px;
+        margin: 45px auto 0;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        line-height: 1.25;
+    }
+
+    .quote-author {
+        color: var(--gold);
+        margin-top: 30px;
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+    }
+
+
+    /* =========================
+       RESERVATION
+    ========================= */
+
+    .reservation {
+        background: var(--gold);
+        color: #111;
+        text-align: center;
+    }
+
+    .reservation .section-label {
+        color: #4c3b1e;
+    }
+
+    .reservation h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3rem, 6vw, 6rem);
+        line-height: 1;
+        font-weight: 500;
+    }
+
+    .reservation p {
+        max-width: 550px;
+        margin: 25px auto;
+        color: #4c4639;
+    }
+
+    .reservation .btn {
+        border-color: #111;
+        color: #111;
+    }
+
+    .reservation .btn:hover {
+        background: #111;
+        color: white;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        background: #080807;
+        padding: 70px 0 30px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 50px;
+        padding-bottom: 60px;
+    }
+
+    .footer-logo {
+        font-family: "Playfair Display", serif;
+        font-size: 2.2rem;
+    }
+
+    .footer-description {
+        color: var(--muted);
+        max-width: 350px;
+        margin-top: 20px;
+    }
+
+    footer h4 {
+        margin-bottom: 20px;
+        color: var(--gold);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+    }
+
+    footer p,
+    footer a {
+        color: var(--muted);
+        font-size: 0.9rem;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    footer a:hover {
+        color: white;
+    }
+
+    .copyright {
+        border-top: 1px solid var(--border);
+        padding-top: 25px;
+        color: #777;
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+
+    /* =========================
+       SCROLL REVEAL ANIMATION
+    ========================= */
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: 0.8s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: #0c0c0b;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            gap: 20px;
+            transform: translateY(-150%);
+            transition: 0.4s ease;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-links.open {
+            transform: translateY(0);
+        }
+
+        .nav-button {
+            display: none;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 17vw, 6rem);
+        }
+
+        .intro-grid,
+        .chef-grid {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .intro-content {
+            padding-left: 0;
+        }
+
+        .intro-image img {
+            height: 500px;
+        }
+
+        .intro-image::after {
+            right: -12px;
+            bottom: -12px;
+        }
+
+        .menu-header {
+            display: block;
+        }
+
+        .menu-header .section-description {
+            margin-bottom: 30px;
+        }
+
+        .menu-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .experience-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .chef-image img {
+            height: 500px;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .copyright {
+            flex-direction: column;
+        }
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+        html {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- =========================================================
+     NAVIGATION
+========================================================== -->
+
+<header class="navbar" id="navbar">
+
+    <div class="nav-inner">
+
+        <!-- CHANGE THIS: Restaurant name -->
+        <a href="#" class="logo">RISHTAURANT</a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#chef">Chef</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a href="#reservation" class="nav-button">Reserve a Table</a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================== -->
+
+<main>
+
+    <section class="hero">
+
+        <div class="hero-content reveal">
+
+            <div class="hero-small">
+                Contemporary Dining · Since 2018
+            </div>
+
+            <!-- CHANGE THIS: Main headline -->
+            <h1>
+                Taste<br>
+                <span>the extraordinary.</span>
+            </h1>
+
+            <!-- CHANGE THIS: Restaurant description -->
+            <p class="hero-text">
+                A modern dining experience where seasonal ingredients,
+                thoughtful design and unforgettable flavours meet.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#reservation" class="btn btn-primary">
+                    Reserve a Table
+                </a>
+
+                <a href="#menu" class="btn btn-outline">
+                    Explore Menu
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="scroll-indicator">
+            Scroll to explore
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section class="section intro" id="about">
+
+        <div class="container intro-grid">
+
+            <div class="intro-image reveal">
+
+                <!--
+                    CHANGE THIS IMAGE
+
+                    Recommended:
+                    Elegant restaurant interior.
+
+                    You can use:
+                    https://unsplash.com
+                    
+                    Search:
+                    "luxury restaurant interior"
+                -->
+
+                <img
+                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"
+                    alt="Elegant restaurant interior"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="intro-content reveal">
+
+                <div class="section-label">
+                    Our Philosophy
+                </div>
+
+                <h2 class="section-title">
+                    Simple ingredients.<br>
+                    Exceptional moments.
+                </h2>
+
+                <p>
+                    At RISHTAURANT, we believe memorable dining doesn't need
+                    unnecessary complexity. We work with exceptional
+                    ingredients and let their natural character speak.
+                </p>
+
+                <p>
+                    Every plate is carefully designed to create a
+                    balance between flavour, texture and presentation.
+                </p>
+
+                <!-- CHANGE THIS: Chef/owner name -->
+                <div class="signature">
+                    — Chef Adrian
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MENU
+    ====================================================== -->
+
+    <section class="section menu-section" id="menu">
+
+        <div class="container">
+
+            <div class="menu-header reveal">
+
+                <div>
+                    <div class="section-label">
+                        The Menu
+                    </div>
+
+                    <h2 class="section-title">
+                        Crafted with intention.
+                    </h2>
+                </div>
+
+                <p class="section-description">
+                    Our menu changes with the seasons,
+                    allowing every ingredient to be served
+                    at its best.
+                </p>
+
+            </div>
+
+
+            <div class="menu-grid reveal">
+
+
+                <!-- MENU ITEM 1 -->
+
+                <div class="menu-item">
+
+                    <div>
+                        <h3>Truffle Burrata</h3>
+
+                        <p>
+                            Burrata · black truffle · tomato · basil oil
+                        </p>
+                    </div>
+
+                    <!-- CHANGE THIS PRICE -->
+                    <div class="price">₹650</div>
+
+                </div>
+
+
+                <!-- MENU ITEM 2 -->
+
+                <div class="menu-item">
+
+                    <div>
+                        <h3>Wild Mushroom Risotto</h3>
+
+                        <p>
+                            Forest mushrooms · parmesan · herbs
+                        </p>
+                    </div>
+
+                    <div class="price">₹780</div>
+
+                </div>
+
+
+                <!-- MENU ITEM 3 -->
+
+                <div class="menu-item">
+
+                    <div>
+                        <h3>Charred Sea Bass</h3>
+
+                        <p>
+                            Seasonal vegetables · lemon butter
+                        </p>
+                    </div>
+
+                    <div class="price">₹1,150</div>
+
+                </div>
+
+
+                <!-- MENU ITEM 4 -->
+
+                <div class="menu-item">
+
+                    <div>
+                        <h3>RISHTAURANT Signature Pasta</h3>
+
+                        <p>
+                            Handmade pasta · parmesan · truffle
+                        </p>
+                    </div>
+
+                    <div class="price">₹850</div>
+
+                </div>
+
+
+                <!-- MENU ITEM 5 -->
+
+                <div class="menu-item">
+
+                    <div>
+                        <h3>Chocolate Sphere</h3>
+
+                        <p>
+                            Dark chocolate · vanilla · hazelnut
+                        </p>
+                    </div>
+
+                    <div class="price">₹520</div>
+
+                </div>
+
+
+                <!-- MENU ITEM 6 -->
+
+                <div class="menu-item">
+
+                    <div>
+                        <h3>Seasonal Tasting</h3>
+
+                        <p>
+                            Chef's seven-course experience
+                        </p>
+                    </div>
+
+                    <div class="price">₹2,400</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LARGE IMAGE SECTION
+    ====================================================== -->
+
+    <section class="feature-image">
+
+        <div class="feature-content reveal">
+
+            <div class="section-label">
+                The RISHTAURANT Experience
+            </div>
+
+            <h2>
+                Food should be remembered.
+            </h2>
+
+            <p>
+                From the first bite to the final conversation,
+                every detail is designed to stay with you.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EXPERIENCE
+    ====================================================== -->
+
+    <section class="section" id="experience">
+
+        <div class="container">
+
+            <div class="section-label reveal">
+                Why RISHTAURANT
+            </div>
+
+            <h2 class="section-title reveal">
+                More than dinner.
+            </h2>
+
+
+            <div class="experience-grid">
+
+
+                <div class="experience-card reveal">
+
+                    <div class="experience-number">
+                        01
+                    </div>
+
+                    <h3>Seasonal</h3>
+
+                    <p>
+                        Our dishes evolve with the seasons,
+                        keeping the menu fresh and exciting.
+                    </p>
+
+                </div>
+
+
+                <div class="experience-card reveal">
+
+                    <div class="experience-number">
+                        02
+                    </div>
+
+                    <h3>Handcrafted</h3>
+
+                    <p>
+                        From handmade pasta to house-made sauces,
+                        every detail receives careful attention.
+                    </p>
+
+                </div>
+
+
+                <div class="experience-card reveal">
+
+                    <div class="experience-number">
+                        03
+                    </div>
+
+                    <h3>Memorable</h3>
+
+                    <p>
+                        Beautiful food, warm hospitality and
+                        an atmosphere designed for long evenings.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CHEF
+    ====================================================== -->
+
+    <section class="section chef" id="chef">
+
+        <div class="container chef-grid">
+
+            <div class="chef-image reveal">
+
+                <!--
+                    CHANGE THIS IMAGE
+
+                    Search:
+                    "professional chef portrait restaurant"
+                -->
+
+                <img
+                    src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1200&q=85"
+                    alt="Professional chef preparing food"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="chef-content reveal">
+
+                <div class="section-label">
+                    Meet the Chef
+                </div>
+
+                <h2 class="section-title">
+                    Passion on<br>
+                    every plate.
+                </h2>
+
+                <p>
+                    Chef Adrian brings years of experience and a
+                    simple philosophy to the kitchen:
+                    respect the ingredient, respect the guest,
+                    and never stop learning.
+                </p>
+
+                <p>
+                    His cooking combines classic European techniques
+                    with modern Indian influences.
+                </p>
+
+                <!-- CHANGE THIS NAME -->
+                <div class="chef-name">
+                    Chef Adrian Kapoor
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TESTIMONIAL
+    ====================================================== -->
+
+    <section class="section testimonial">
+
+        <div class="container">
+
+            <div class="section-label reveal">
+                Guest Stories
+            </div>
+
+            <div class="quote reveal">
+                “An unforgettable evening.
+                Every course felt thoughtful,
+                elegant and completely delicious.”
+            </div>
+
+            <!-- CHANGE THIS -->
+            <div class="quote-author reveal">
+                — Ananya Mehta
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESERVATION
+    ====================================================== -->
+
+    <section class="section reservation" id="reservation">
+
+        <div class="container reveal">
+
+            <div class="section-label">
+                Your Table Awaits
+            </div>
+
+            <h2>
+                Make tonight<br>
+                memorable.
+            </h2>
+
+            <p>
+                Join us for an evening of thoughtful food,
+                beautiful surroundings and good conversation.
+            </p>
+
+            <!--
+                CHANGE THIS LINK
+
+                Replace "#" with the restaurant's actual
+                reservation / booking page.
+
+                Example:
+                https://example.com/reservation
+            -->
+
+            <a href="#" class="btn">
+                Reserve Your Table
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer id="contact">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <!-- CHANGE THIS -->
+                <div class="footer-logo">
+                    RISHTAURANT
+                </div>
+
+                <p class="footer-description">
+                    Contemporary dining, seasonal ingredients
+                    and unforgettable evenings.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Visit</h4>
+
+                <!-- CHANGE THESE DETAILS -->
+
+                <p>24 Rose Avenue</p>
+                <p>Mumbai, India</p>
+                <p>+91 98765 43210</p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Hours</h4>
+
+                <!-- CHANGE THESE -->
+
+                <p>Tuesday — Sunday</p>
+                <p>12:00 PM — 11:00 PM</p>
+                <p>Monday — Closed</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <!-- CHANGE THIS YEAR / NAME -->
+            <span>© 2026 RISHTAURANT</span>
+
+            <span>
+                Designed & Developed by Rishabh
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script>
+
+    /* =========================
+       NAVBAR SCROLL EFFECT
+    ========================= */
+
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+
+    });
+
+
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+
+        navLinks.classList.toggle("open");
+
+    });
+
+
+    /* Close mobile menu after clicking a link */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("open");
+
+        });
+
+    });
+
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("active");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+</script>
+```
+
+</body>
+</html>
